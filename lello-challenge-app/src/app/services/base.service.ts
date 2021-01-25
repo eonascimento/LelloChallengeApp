@@ -4,7 +4,7 @@ import { throwError } from "rxjs";
 export abstract class BaseService {
 
   constructor() { }
-  protected UrlServiceV1: string = "https://api.github.com/orgs/angular/public_members";
+  protected UrlServiceV1: string = "https://api.github.com/";
 
   protected serviceError(response: Response | any) {
     let customError: string[] = [];
