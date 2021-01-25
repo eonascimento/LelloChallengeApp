@@ -1,0 +1,27 @@
+<div class="container main-container">
+
+  <h1>Lista de Membros</h1>
+
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Foto</th>
+        <th>Login</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tr *ngFor="let membro of membros">
+      <td>
+        <img src="{{ membro.avatar_url }}" style="width: 100px; height: 100px">
+      </td>
+      <td>
+        {{ membro.login }}
+      </td>
+      <td class="text-right">
+        <a class="btn btn-info" [routerLink]="['/membros/detalhes',membro.login]">
+          <span class="fa fa-search"></span>
+        </a>&nbsp;
+      </td>
+    </tr>
+  </table>
+</div>
