@@ -14,7 +14,27 @@ export class MembroService extends BaseService {
 
   obterTodos(): Observable<Membro[]> {
     return this.http
-        .get<Membro[]>(this.UrlServiceV1)
+        .get<Membro[]>(this.UrlServiceV1 + "orgs/angular/public_members")
         .pipe(catchError(super.serviceError));
   }
+
+  obterPorLogin(login: string): Observable<Membro> {
+    return this.http
+        .get<Membro>(this.UrlServiceV1 + "users/" + login)
+        .pipe(catchError(super.serviceError));
+  }
+
+  obterSeguidoresPorLogin(login: string): Observable<Membro[]> {
+    return this.http
+        .get<Membro[]>(this.UrlServiceV1 + "users/" + login +"/followers")
+        .pipe(catchError(super.serviceError));
+  }
+
+  obterRepositoriosPorLogin(login: string): Observable<Membro[]> {
+    return this.http
+        .get<Membro[]>(this.UrlServiceV1 + "users/" + login +"/repos")
+        .pipe(catchError(super.serviceError));
+  }
+
+
 }

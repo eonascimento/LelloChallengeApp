@@ -1,7 +1,7 @@
 import { MembroService } from './services/membro.service';
 import { MembroAppComponent } from './membro.app.component';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -9,11 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListaComponent } from './lista/lista.component';
 
 import { MembroRoutingModule } from './membro.route';
+import { DetalhesComponent } from './detalhes/detalhes.component';
+import { MembroResolve } from './services/membro.resolve';
 
 @NgModule({
   declarations: [
     MembroAppComponent,
-    ListaComponent
+    ListaComponent,
+    DetalhesComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +27,8 @@ import { MembroRoutingModule } from './membro.route';
     HttpClientModule
   ],
   providers: [
-    MembroService
+    MembroService,
+    MembroResolve
   ]
 
 })

@@ -13,6 +13,11 @@ export class ListaComponent implements OnInit {
   constructor(private membroService: MembroService ) { }
 
   ngOnInit(): void {
+    // this.membros = new Array<Membro>();
+    // var membro = new Membro()
+    // membro.login = 'CaerusKaru';
+    // membro.avatar_url = 'https://avatars.githubusercontent.com/u/416563?v=4';
+    // this.membros.push(membro);
     this.carregarMembros()
   }
 

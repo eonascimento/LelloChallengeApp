@@ -1,0 +1,37 @@
+<div class="container main-container">
+  <h1>Detalhes do {{membro.name? membro.name : membro.login }}</h1>
+
+  <div>
+    <hr />
+    <dl class="row">
+      <dt class="col-sm-4">
+        <label class="control-label">Nome</label>
+      </dt>
+      <dd class="col-sm-8">
+        {{membro.name? membro.name : membro.login }}
+      </dd>
+      <dt class="col-sm-4">
+        <label class="control-label">Quantidade de repositórios</label>
+      </dt>
+      <dd class="col-sm-8">
+        {{membro.qtdRepos}}
+      </dd>
+      <dt class="col-sm-4">
+        <label class="control-label">Quantidade de seguidores</label>
+      </dt>
+      <dd class="col-sm-8">
+        {{membro.qtdFollowers}}
+      </dd>
+      <dt class="col-sm-4">
+        <label class="control-label">Data em que a pessoa entrou no github</label>
+      </dt>
+      <dd class="col-sm-8">
+        {{ membro.created_at}}
+      </dd>
+    </dl>
+  </div>
+
+  <div>
+    <a class="btn btn-info" [routerLink]="['/membros/listar-todos']">Voltar</a>
+  </div>
+</div>
