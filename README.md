@@ -17,4 +17,6 @@ ng serve >> para Algular/Cli
 
 ## Publicação
 
-https://github.com/eonascimento/lello-challenge-app
+```bash
+ng buld --prod
+```
