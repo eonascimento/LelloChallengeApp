@@ -12,9 +12,9 @@ export class MembroService extends BaseService {
 
   constructor(private http: HttpClient) { super()}
 
-  obterTodos(): Observable<Membro[]> {
+  obterTodos(page = 1): Observable<Membro[]> {
     return this.http
-        .get<Membro[]>(this.UrlServiceV1 + "orgs/angular/public_members")
+        .get<Membro[]>(this.UrlServiceV1 + "orgs/angular/public_members?page="+ page)
         .pipe(catchError(super.serviceError));
   }
 

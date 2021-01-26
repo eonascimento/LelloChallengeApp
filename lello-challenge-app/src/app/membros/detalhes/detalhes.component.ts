@@ -2,8 +2,6 @@ import { MembroService } from './../services/membro.service';
 import { Component, OnInit } from '@angular/core';
 import { Membro } from '../models/membro.model';
 import { ActivatedRoute } from '@angular/router';
-import { DatePipe } from '@angular/common';
-
 @Component({
   selector: 'app-detalhes',
   templateUrl: './detalhes.component.html'
