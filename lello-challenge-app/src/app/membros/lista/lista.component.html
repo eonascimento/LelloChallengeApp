@@ -1,33 +1,32 @@
-<div class="container main-container">
+<div class="container container-fluid ">
 
   <h1>Lista de Membros</h1>
-  <input [(ngModel)]="filtro">
-  <a class="btn btn-info" type="button" (click)="filtrar()"><span class="fa fa-search"></span></a>
-  <a class="btn btn-info" type="button" (click)="limparFIltro()"><span class="fa fa-trash-alt"></span></a>
-  <table class="table table-hover">
-    <thead class="thead-dark">
-      <tr>
-        <th>Foto</th>
-        <th>Login</th>
-        <th>Perfil</th>
-        <th></th>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Pesquisar por Login" aria-label="Pesquisar por Login" aria-describedby="basic-addon2" [(ngModel)]="filtro">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" (click)="filtrar()"><span class="fa fa-search"></span></button>
+      <button class="btn btn-outline-secondary" type="button" (click)="limparFIltro()"><span class="fa fa-trash-alt"></span></button>
+    </div>
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Foto</th>
+          <th>Login</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tr *ngFor="let membro of membrosFiltrado">
+        <td>
+          <img src="{{ membro.avatar_url }}" style="width: 100px; height: 100px">
+        </td>
+        <td>
+          {{ membro.login }}
+        </td>
+        <td class="text-right">
+          <a class="btn btn-info" [routerLink]="['/membros/detalhes',membro.login]">
+            <span class="fa fa-search"></span>
+          </a>&nbsp;
+        </td>
       </tr>
-    </thead>
-    <tr *ngFor="let membro of membrosFiltrado">
-      <td>
-        <img src="{{ membro.avatar_url }}" style="width: 100px; height: 100px">
-      </td>
-      <td>
-        {{ membro.login }}
-      </td>
-      <td>
-        {{ membro.html_url }}
-      </td>
-      <td class="text-right">
-        <a class="btn btn-info" [routerLink]="['/membros/detalhes',membro.login]">
-          <span class="fa fa-search"></span>
-        </a>&nbsp;
-      </td>
-    </tr>
-  </table>
-</div>
+    </table>
+  </div>
