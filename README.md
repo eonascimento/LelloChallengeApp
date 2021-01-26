@@ -18,5 +18,5 @@ ng serve >> para Algular/Cli
 ## Publicação
 
 ```bash
-ng buld --prod
+ng build --prod
 ```
