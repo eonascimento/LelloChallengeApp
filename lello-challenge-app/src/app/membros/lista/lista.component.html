@@ -2,13 +2,14 @@
 
   <h1>Lista de Membros</h1>
   <input [(ngModel)]="filtro">
-  <button type="button" (click)="filtrar()">Pesquisar</button>
-  <button type="button" (click)="limparFIltro()">Limpar Filtro</button>
+  <a class="btn btn-info" type="button" (click)="filtrar()"><span class="fa fa-search"></span></a>
+  <a class="btn btn-info" type="button" (click)="limparFIltro()"><span class="fa fa-trash-alt"></span></a>
   <table class="table table-hover">
     <thead class="thead-dark">
       <tr>
         <th>Foto</th>
         <th>Login</th>
+        <th>Perfil</th>
         <th></th>
       </tr>
     </thead>
@@ -18,6 +19,9 @@
       </td>
       <td>
         {{ membro.login }}
+      </td>
+      <td>
+        {{ membro.html_url }}
       </td>
       <td class="text-right">
         <a class="btn btn-info" [routerLink]="['/membros/detalhes',membro.login]">
