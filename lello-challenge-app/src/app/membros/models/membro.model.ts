@@ -32,6 +32,7 @@ export class Membro {
   public following: number;
   public created_at: Date;
   public updated_at: Date;
+  public updated_at_format: string;
   public qtdFollowers: number;
   public qtdRepos: number;
 }

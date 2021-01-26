@@ -15,6 +15,7 @@ export class DetalhesComponent implements OnInit {
     private route: ActivatedRoute,
     private membroService: MembroService) {
       this.membro = this.route.snapshot.data['membro'];
+      this.membro.updated_at_format =  new Date(this.membro.created_at).toLocaleDateString('pt-br', {  month: '2-digit', day: '2-digit', year:'numeric' })
      }
 
   ngOnInit(): void {

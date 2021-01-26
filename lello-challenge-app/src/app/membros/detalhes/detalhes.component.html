@@ -26,12 +26,12 @@
         <label class="control-label">Data em que a pessoa entrou no github</label>
       </dt>
       <dd class="col-sm-8">
-        {{ membro.created_at}}
+        {{ membro.updated_at_format}}
       </dd>
     </dl>
   </div>
 
   <div>
-    <a class="btn btn-info" [routerLink]="['/membros/listar-todos']">Voltar</a>
+    <a class="btn btn-info" [routerLink]="['/membros/lista-todos']">Voltar</a>
   </div>
 </div>
